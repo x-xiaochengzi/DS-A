@@ -5,9 +5,14 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 #include <cstdint>
+#include <stdexcept>
+#include <iostream>
+// Vector.h
 
 template<typename T>
 class Vector {
+    template<typename U>
+    friend std::ostream &operator<<(std::ostream &os, const Vector<U> &vec);
 public:
     // EFFECTS: Create an empty vector
     Vector();
@@ -51,10 +56,21 @@ public:
     // EFFECTS: Return the number of elements stored in the vector
     int32_t size() const;
 
+    // EFFECTS: Judge whether the vector is empty
+    bool empty() const;
 
+private:
+    T *data;  // store elements
+    int32_t _size; // the number of current valid  elements
+    int32_t capacity; // the maximum number of elements that can be accommodated.
 
+private:
+    void swap_vector(Vector &other);
+    void resize(int32_t capacity_in);
 };
 
-
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const Vector<T> &vec);
+#include "Vector.tpp"
 
 #endif //VECTOR_H
