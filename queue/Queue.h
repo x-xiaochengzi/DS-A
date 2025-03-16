@@ -18,4 +18,6 @@ public:
 
     // EFFECTS: Checks if the queue is empty.
     virtual bool empty() const = 0;
+
+    virtual ~Queue() = default;
 };
