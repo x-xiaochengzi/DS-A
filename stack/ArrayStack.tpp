@@ -6,7 +6,7 @@
 // EFFECTS: Creates a stack with the given capacity
 template<typename T>
 ArrayStack<T>::ArrayStack(size_t capacity)
-    :capacity(capacity), base_ptr(new T[capacity]), top_ptr(base_ptr){}
+    :capacity(capacity), base_ptr(capacity ? new T[capacity] : 0), top_ptr(base_ptr){}
 
 
 // EFFECTS: Creates a stack from an existing stack
