@@ -97,4 +97,5 @@ void ArrayStack<T>::resize(size_t capacity) {
     delete []base_ptr;
     base_ptr = new_base_ptr;
     top_ptr = new_top_ptr;
+    this->capacity = capacity;
 }
