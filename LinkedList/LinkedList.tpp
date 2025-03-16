@@ -51,7 +51,7 @@ T& LinkedList<T>::front() {
 
 // EFFECTS:  Inserts data at the front of the list.
 template<typename  T>
-void LinkedList<T>::push_front(T data) {
+void LinkedList<T>::push_front(const T &data) {
     Node *node = new Node {data, sentinel, sentinel->next};
     sentinel->next->prev = node;
     sentinel->next = node;
@@ -94,7 +94,7 @@ size_t LinkedList<T>::size() const {
 
 template<typename T>
 // EFFECTS: Inserts data at the end of the list.
-void LinkedList<T>::push_back(T data) {
+void LinkedList<T>::push_back(const T &data) {
     Node *node = new Node {data, sentinel->prev, sentinel};
     sentinel->prev->next = node;
     sentinel->prev = node;

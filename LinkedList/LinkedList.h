@@ -27,7 +27,7 @@ public:
     T& front();
 
     // EFFECTS:  Inserts data at the front of the list.
-    void push_front(T data);
+    void push_front(const T &data);
     // REQUIRES: The list is not empty
     // EFFECTS:  Removes the first element.
     void pop_front();
@@ -37,7 +37,7 @@ public:
     // EFFECTS: Returns the size of the list.
     size_t size() const;
     // EFFECTS: Inserts data at the end of the list.
-    void push_back(T data);
+    void push_back(const T &data);
     // REQUIRES: The list is not empty
     // EFFECTS: Removes the last element
     void pop_back();
